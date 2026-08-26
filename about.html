@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Kylie Peele, LCSW</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Cormorant+Garamond:wght@400;500;600;700&family=Smooch&family=Oregano:ital@0;1&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --coral: #ef6a6c;
+      --pink: #e986c1;
+      --text: #4d3842;
+      --soft-text: #7f6570;
+      --shadow: 0 18px 40px rgba(166, 111, 130, 0.14);
+      --shadow-soft: 0 10px 24px rgba(166, 111, 130, 0.12);
+      --border-soft: rgba(255, 255, 255, 0.45);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top, rgba(255,255,255,0.55), transparent 45%),
+        linear-gradient(180deg, #edd9df 0%, #f4e7eb 100%);
+      overflow-x: hidden;
+    }
+
+    .page {
+      max-width: 1460px;
+      margin: 0 auto;
+      min-height: 100vh;
+      position: relative;
+      background: linear-gradient(180deg, rgba(255,255,255,0.38), rgba(255,255,255,0.2));
+      overflow: hidden;
+    }
+
+    .bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .blob-left {
+      position: absolute;
+      left: -130px;
+      top: 155px;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, rgba(255,255,255,0.55), rgba(248, 193, 210, 0.72) 60%, rgba(238, 182, 200, 0.88));
+      opacity: 0.9;
+    }
+
+    .wave-1, .wave-2, .wave-3, .wave-4 {
+      position: absolute;
+      left: -10%;
+      width: 125%;
+      border-radius: 50%;
+      background: linear-gradient(90deg, rgba(247, 210, 222, 0.5), rgba(244, 205, 219, 0.25), rgba(247, 210, 222, 0.55));
+    }
+
+    .wave-1 { top: 220px; height: 170px; transform: rotate(-5deg); opacity: 0.7; }
+    .wave-2 { top: 455px; height: 170px; transform: rotate(-8deg); opacity: 0.75; }
+    .wave-3 { top: 690px; height: 150px; transform: rotate(-8deg); opacity: 0.45; }
+    .wave-4 { top: 790px; height: 160px; transform: rotate(-10deg); opacity: 0.6; }
+
+    .right-curve-top, .right-curve-bottom {
+      position: absolute;
+      right: -120px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 50% 50%, rgba(252, 219, 229, 0.55), rgba(247, 204, 219, 0.78));
+    }
+
+    .right-curve-top { top: -30px; width: 430px; height: 220px; opacity: 0.82; }
+    .right-curve-bottom { right: -80px; bottom: 40px; width: 360px; height: 170px; opacity: 0.42; }
+
+    .sparkle {
+      position: absolute;
+      z-index: 1;
+    }
+
+    .sparkle img {
+      width: 64px;
+      height: auto;
+      display: block;
+    }
+
+    .sparkle.small img { width: 38px; opacity: 0.72; }
+    .s1 { left: 60px; top: 180px; }
+    .s2 { right: 90px; top: 130px; }
+    .s3 { right: 60px; bottom: 100px; }
+
+    header {
+      position: relative;
+      z-index: 5;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 26px 56px 0;
+    }
+
+    .brand {
+      font-family: "Smooch", serif;
+      font-size: 3.1rem;
+      line-height: 1;
+      color: var(--coral);
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      gap: 42px;
+      font-size: 1.15rem;
+    }
+
+    nav a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    main {
+      position: relative;
+      z-index: 4;
+      padding: 34px 72px 70px;
+    }
+
+    h1 {
+      margin: 10px 0 28px;
+      text-align: center;
+      font-family: "Oregano", serif;
+      font-size: clamp(3.5rem, 7vw, 5.4rem);
+      line-height: 0.98;
+      color: var(--pink);
+    }
+
+    .content-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .card {
+      background: rgba(255, 249, 250, 0.75);
+      border: 1px solid var(--border-soft);
+      border-radius: 34px;
+      box-shadow: var(--shadow);
+      padding: 34px;
+    }
+
+    .logo-box {
+      text-align: center;
+    }
+
+    .logo-box img {
+      width: min(360px, 100%);
+      height: auto;
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      font-family: "Oregano", serif;
+      font-size: 2.3rem;
+      color: var(--coral);
+    }
+
+    p {
+      font-size: 1.25rem;
+      line-height: 1.55;
+      color: var(--text);
+      margin: 0 0 18px;
+    }
+
+    .highlight {
+      color: var(--pink);
+      font-weight: 600;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 1.05rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255,255,255,0.5);
+    }
+
+    .btn-primary {
+      background: linear-gradient(180deg, #ff7a79, #f35f61);
+      color: white;
+    }
+
+    .btn-secondary {
+      background: rgba(255, 245, 247, 0.82);
+      color: var(--text);
+    }
+
+    @media (max-width: 900px) {
+      header {
+        padding: 24px 28px 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+      }
+
+      main {
+        padding: 20px 28px 54px;
+      }
+
+      .content-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .brand {
+        font-size: 2.2rem;
+      }
+
+      nav {
+        gap: 18px;
+        flex-wrap: wrap;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="bg">
+      <div class="blob-left"></div>
+      <div class="wave-1"></div>
+      <div class="wave-2"></div>
+      <div class="wave-3"></div>
+      <div class="wave-4"></div>
+      <div class="right-curve-top"></div>
+      <div class="right-curve-bottom"></div>
+      <div class="sparkle s1"><img src="sparkle.png" alt=""></div>
+      <div class="sparkle small s2"><img src="sparkle.png" alt=""></div>
+      <div class="sparkle s3"><img src="sparkle.png" alt=""></div>
+    </div>
+
+    <header>
+      <a class="brand" href="index.html">Alternative Minds Therapy</a>
+
+      <nav>
+  <a href="about.html">About</a>
+  <a href="specialties.html">Specialties</a>
+  <a href="services.html">Services</a>
+  <a href="art.html">A.R.T.</a>
+  <a href="contact.html">Contact</a>
+</nav>
+    </header>
+
+    <main>
+      <h1>What makes me stand out?</h1>
+
+      <div class="content-wrap">
+        <div class="card logo-box">
+          <img src="LOGOtransparent.png" alt="Alternative Minds Therapy logo">
+        </div>
+
+        <div class="card">
+          <h2>Warm, affirming, and collaborative care</h2>
+
+          <p>
+            I provide a space that is affirming, collaborative, and real. My work centers clients who want support exploring identity, relationships, sexuality, and healing without shame.
+          </p>
+
+          <p>
+            Therapy with me is warm, thoughtful, and grounded in helping you feel more connected to yourself, your body, and your relationships.
+          </p>
+
+          <p class="highlight">
+            My practice is especially supportive of LGBTQIA+ clients, kink and BDSM communities, and ethical non-monogamy.
+          </p>
+
+          <p>
+            My personal experiences in mental health and the medical field also inform my approach to coping with mental health and chronic illness issues for my clients. Though I have experience in the kink and the ENM worlds, I think you are the expert in your life and relationships, so I encourage self autonomy while providing alternative views to insure your safety within your relationships.
+          </p>
+
+          <h2>Personal Life</h2>
+
+          <p>
+            I have been married since 2017 to a wonderful husband. We have 4 chosen fur babies, Butters, Brad, Pete, and Este, who I guarantee will make an appearance at least once in your sessions! My husband and I practice ethical non-monogamy and have been involved in our local kink scene for more than 10 years. I believe sexuality is ever-evolving for most people, myself included. In my free time, I love making funny vinyl t-shirts and stickers, cuddling with my kitties, listening to true crime podcasts, and watching trashy reality tv and true crime documentaries.
+          </p>
+
+          <p>
+            Unlike "traditional" or more old school therapy, I think my self disclosure sometimes encourages and provides support to my clients. I will not share enough that you think we are besties, but I think self-disclosure does have a place in therapy if it helps my clients. And since I have the desire to help my own community, self disclosure is mandatory. Because of this unique relationship, I know there are chances to see each other in the "real world", and I hope you know I would never out you by saying hello in the community without you first saying hello to protect your privacy.
+          </p>
+
+        </div>
+      </div>
+
+      <div class="buttons" style="justify-content: center; margin-top: 32px;">
+        <a href="contact.html" class="btn btn-primary">Contact Kylie</a>
+        <a href="services.html" class="btn btn-secondary">View Services</a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
