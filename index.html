@@ -7,29 +7,17 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Smooch&display=swap" rel="stylesheet">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oregano:ital@0;1&family=Smooch&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Cormorant+Garamond:wght@400;500;600;700&family=Smooch&family=Oregano:ital@0;1&display=swap" rel="stylesheet">
 
   <style>
     :root {
       --bg: #f3e4e8;
-      --panel: rgba(255, 248, 250, 0.72);
-      --panel-strong: rgba(255, 248, 250, 0.82);
       --coral: #ef6a6c;
-      --coral-deep: #eb5b5e;
       --pink: #e986c1;
       --text: #4d3842;
       --soft-text: #7f6570;
       --shadow: 0 18px 40px rgba(166, 111, 130, 0.14);
       --shadow-soft: 0 10px 24px rgba(166, 111, 130, 0.12);
-      --radius-xl: 34px;
       --radius-pill: 999px;
       --border-soft: rgba(255, 255, 255, 0.45);
     }
@@ -38,13 +26,8 @@
       box-sizing: border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       margin: 0;
-      min-height: 100vh;
       font-family: "Cormorant Garamond", serif;
       color: var(--text);
       background:
@@ -64,7 +47,6 @@
       overflow: hidden;
     }
 
-    /* background ribbons / blobs */
     .bg {
       position: absolute;
       inset: 0;
@@ -81,7 +63,6 @@
       border-radius: 50%;
       background: radial-gradient(circle at 35% 35%, rgba(255,255,255,0.55), rgba(248, 193, 210, 0.72) 60%, rgba(238, 182, 200, 0.88));
       opacity: 0.9;
-      filter: blur(0.4px);
     }
 
     .wave-1,
@@ -93,7 +74,6 @@
       width: 125%;
       border-radius: 50%;
       background: linear-gradient(90deg, rgba(247, 210, 222, 0.5), rgba(244, 205, 219, 0.25), rgba(247, 210, 222, 0.55));
-      filter: blur(0.2px);
     }
 
     .wave-1 {
@@ -149,54 +129,22 @@
 
     .sparkle {
       position: absolute;
-      width: 72px;
-      height: 72px;
+      font-size: 40px;
+      line-height: 1;
       z-index: 1;
     }
 
-    .sparkle::before,
-    .sparkle::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      background: currentColor;
-      transform: translate(-50%, -50%);
-      border-radius: 999px;
-    }
-
-    .sparkle::before {
-      width: 16px;
-      height: 100%;
-    }
-
-    .sparkle::after {
-      width: 100%;
-      height: 16px;
-    }
-
     .sparkle.small {
-      width: 38px;
-      height: 38px;
-      opacity: 0.75;
-    }
-
-    .sparkle.small::before {
-      width: 9px;
-    }
-
-    .sparkle.small::after {
-      height: 9px;
+      font-size: 22px;
+      opacity: 0.72;
     }
 
     .sparkle.coral {
       color: #ff6867;
-      filter: drop-shadow(0 0 18px rgba(255, 133, 140, 0.18));
     }
 
     .sparkle.white {
       color: rgba(255, 255, 255, 0.95);
-      filter: drop-shadow(0 0 18px rgba(255,255,255,0.25));
     }
 
     .s1 { left: 78px; top: 215px; }
@@ -218,10 +166,11 @@
     }
 
     .brand {
-.smooch-regular {
-  font-family: "Smooch", cursive;
-  font-weight: 400;
-  font-style: normal;
+      font-family: "Smooch", serif;
+      font-size: 3.1rem;
+      line-height: 1;
+      color: var(--coral);
+      letter-spacing: -0.02em;
     }
 
     nav {
@@ -251,11 +200,14 @@
     }
 
     h1 {
-    .smooch-regular {
-  font-family: "Smooch", cursive;
-  font-weight: 400;
-  font-style: normal;
-}
+      margin: 12px 0 18px;
+      text-align: center;
+      font-family: "Oregano", serif;
+      font-size: clamp(4rem, 7vw, 5.9rem);
+      line-height: 0.98;
+      letter-spacing: -0.03em;
+      color: var(--pink);
+    }
 
     .hero-copy {
       max-width: 760px;
@@ -317,51 +269,31 @@
     }
 
     .focus-star {
-      position: relative;
-      width: 62px;
-      height: 62px;
+      font-size: 52px;
+      line-height: 1;
       color: #ff6e6c;
       flex: 0 0 auto;
     }
 
-    .focus-star::before,
-    .focus-star::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      background: currentColor;
-      border-radius: 999px;
-    }
-
-    .focus-star::before {
-      width: 12px;
-      height: 100%;
-    }
-
-    .focus-star::after {
-      width: 100%;
-      height: 12px;
-    }
-
     h2 {
-    .oregano-regular {
-  font-family: "Oregano", cursive;
-  font-weight: 400;
-  font-style: normal;
-}
+      margin: 0;
+      font-family: "Oregano", serif;
+      font-size: 3.1rem;
+      line-height: 1;
+      color: var(--coral);
+      letter-spacing: -0.02em;
+    }
 
     .focus-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(180px, 280px));
-      gap: 18px 22px;
+      grid-template-columns: repeat(2, minmax(140px, 220px));
+      gap: 14px 18px;
       margin-top: 26px;
     }
 
     .pill {
-      min-height: 94px;
-      padding: 20px 26px;
+      min-height: 68px;
+      padding: 14px 20px;
       border-radius: 32px;
       display: flex;
       align-items: center;
@@ -369,7 +301,6 @@
       text-align: left;
       background: rgba(255, 250, 251, 0.74);
       box-shadow: var(--shadow);
-      backdrop-filter: blur(12px);
       border: 1px solid var(--border-soft);
       font-family: "DM Serif Display", serif;
       font-size: 1.3rem;
@@ -381,21 +312,38 @@
       display: grid;
       grid-template-rows: auto auto;
       gap: 20px;
-      padding-top: 6px;
     }
 
     .logo-wrap {
       display: flex;
       justify-content: center;
-      align-items: center;
-      min-height: 240px;
+      align-items: flex-start;
     }
 
     .logo-wrap img {
-      width: min(390px, 100%);
+      width: min(520px, 100%);
       height: auto;
       display: block;
-      filter: drop-shadow(0 12px 22px rgba(98, 66, 124, 0.08));
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      margin: 40px auto 0;
+      max-width: 900px;
+    }
+
+    .contact-photo {
+      flex: 0 0 auto;
+    }
+
+    .contact-photo img {
+      width: 400px;
+      height: auto;
+      display: block;
+      mix-blend-mode: multiply;
     }
 
     .info-card {
@@ -403,11 +351,21 @@
       border: 1px solid var(--border-soft);
       border-radius: 34px;
       box-shadow: var(--shadow);
-      backdrop-filter: blur(14px);
-      padding: 38px 46px;
-      min-height: 245px;
+      padding: 32px 46px;
       position: relative;
       overflow: hidden;
+      flex: 1;
+    }
+
+    .info-card-contact {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 14px;
+      font-size: 1.05rem;
+      color: var(--soft-text);
+      position: relative;
+      z-index: 1;
     }
 
     .info-card::before {
@@ -541,24 +499,25 @@
       <div class="right-curve-top"></div>
       <div class="right-curve-bottom"></div>
 
-      <div class="sparkle coral s1"></div>
-      <div class="sparkle white small s2"></div>
-      <div class="sparkle coral s3"></div>
-      <div class="sparkle white small s4"></div>
-      <div class="sparkle coral s5"></div>
-      <div class="sparkle white small s6"></div>
-      <div class="sparkle white small s7"></div>
-      <div class="sparkle white small s8"></div>
+      <div class="sparkle coral s1">✦</div>
+      <div class="sparkle white small s2">✦</div>
+      <div class="sparkle coral s3">✦</div>
+      <div class="sparkle white small s4">✦</div>
+      <div class="sparkle coral s5">✦</div>
+      <div class="sparkle white small s6">✦</div>
+      <div class="sparkle white small s7">✦</div>
+      <div class="sparkle white small s8">✦</div>
     </div>
 
     <header>
       <div class="brand">Alternative Minds Therapy</div>
 
       <nav>
-        <a href="#about">About</a>
-        <a href="#specialties">Specialties</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
+        <a href="about.html">About</a>
+        <a href="specialties.html">Specialties</a>
+        <a href="services.html">Services</a>
+        <a href="art.html">A.R.T.</a>
+        <a href="contact.html">Contact</a>
       </nav>
     </header>
 
@@ -580,7 +539,7 @@
       <section class="middle">
         <div class="left-column">
           <div class="focus-title-row">
-            <div class="focus-star"></div>
+            <div class="focus-star">✦</div>
             <h2 id="specialties">Areas of Focus</h2>
           </div>
 
@@ -600,17 +559,24 @@
 
         <div class="right-column">
           <div class="logo-wrap">
-            <img src="logo.png" alt="Alternative Minds Therapy logo">
-          </div>
-
-          <div class="info-card" id="services">
-            <h3>Now accepting inquiries</h3>
-            <p>
-              Email, text, or use the contact form to get started.
-            </p>
+            <img src="LOGOtransparent.png" alt="Alternative Minds Therapy logo">
           </div>
         </div>
       </section>
+
+      <div class="contact-row">
+        <div class="contact-photo">
+          <img src="Taylor.png" alt="Kylie Peele">
+        </div>
+        <div class="info-card" id="services">
+          <h3>Now accepting inquiries</h3>
+          <p><a href="mailto:kyliepeelelcsw@gmail.com" style="color: var(--coral); text-decoration: underline;">Email</a> or text to get started!</p>
+          <div class="info-card-contact">
+            <span>kyliepeelelcsw@gmail.com</span>
+            <span>919-727-9550</span>
+          </div>
+        </div>
+      </div>
 
       <div id="contact"></div>
     </main>

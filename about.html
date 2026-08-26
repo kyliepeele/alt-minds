@@ -7,7 +7,6 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Cormorant+Garamond:wght@400;500;600;700&family=Smooch&family=Oregano:ital@0;1&display=swap" rel="stylesheet">
 
   <style>
@@ -85,7 +84,6 @@
     }
 
     .brand {
-      font-family: "DM Serif Display", serif;
       font-family: "Smooch", serif;
       font-size: 3.1rem;
       line-height: 1;
@@ -98,3 +96,196 @@
       gap: 42px;
       font-size: 1.15rem;
     }
+
+    nav a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    main {
+      position: relative;
+      z-index: 4;
+      padding: 34px 72px 70px;
+    }
+
+    h1 {
+      margin: 10px 0 28px;
+      text-align: center;
+      font-family: "Oregano", serif;
+      font-size: clamp(3.5rem, 7vw, 5.4rem);
+      line-height: 0.98;
+      color: var(--pink);
+    }
+
+    .content-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .card {
+      background: rgba(255, 249, 250, 0.75);
+      border: 1px solid var(--border-soft);
+      border-radius: 34px;
+      box-shadow: var(--shadow);
+      padding: 34px;
+    }
+
+    .logo-box {
+      text-align: center;
+    }
+
+    .logo-box img {
+      width: min(360px, 100%);
+      height: auto;
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      font-family: "Oregano", serif;
+      font-size: 2.3rem;
+      color: var(--coral);
+    }
+
+    p {
+      font-size: 1.25rem;
+      line-height: 1.55;
+      color: var(--text);
+      margin: 0 0 18px;
+    }
+
+    .highlight {
+      color: var(--pink);
+      font-weight: 600;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 1.05rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255,255,255,0.5);
+    }
+
+    .btn-primary {
+      background: linear-gradient(180deg, #ff7a79, #f35f61);
+      color: white;
+    }
+
+    .btn-secondary {
+      background: rgba(255, 245, 247, 0.82);
+      color: var(--text);
+    }
+
+    @media (max-width: 900px) {
+      header {
+        padding: 24px 28px 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+      }
+
+      main {
+        padding: 20px 28px 54px;
+      }
+
+      .content-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .brand {
+        font-size: 2.2rem;
+      }
+
+      nav {
+        gap: 18px;
+        flex-wrap: wrap;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="bg">
+      <div class="wave-1"></div>
+      <div class="wave-2"></div>
+      <div class="sparkle coral s1">✦</div>
+      <div class="sparkle white s2">✦</div>
+      <div class="sparkle coral s3">✦</div>
+    </div>
+
+    <header>
+      <a class="brand" href="index.html">Alternative Minds Therapy</a>
+
+      <nav>
+  <a href="about.html">About</a>
+  <a href="specialties.html">Specialties</a>
+  <a href="services.html">Services</a>
+  <a href="art.html">A.R.T.</a>
+  <a href="contact.html">Contact</a>
+</nav>
+    </header>
+
+    <main>
+      <h1>What makes me stand out?</h1>
+
+      <div class="content-wrap">
+        <div class="card logo-box">
+          <img src="LOGOtransparent.png" alt="Alternative Minds Therapy logo">
+        </div>
+
+        <div class="card">
+          <h2>Warm, affirming, and collaborative care</h2>
+
+          <p>
+            I provide a space that is affirming, collaborative, and real. My work centers clients who want support exploring identity, relationships, sexuality, and healing without shame.
+          </p>
+
+          <p>
+            Therapy with me is warm, thoughtful, and grounded in helping you feel more connected to yourself, your body, and your relationships.
+          </p>
+
+          <p class="highlight">
+            My practice is especially supportive of LGBTQIA+ clients, kink and BDSM communities, and ethical non-monogamy.
+          </p>
+
+          <p>
+            My personal experiences in mental health and the medical field also inform my approach to coping with mental health and chronic illness issues for my clients. Though I have experience in the kink and the ENM worlds, I think you are the expert in your life and relationships, so I encourage self autonomy while providing alternative views to insure your safety within your relationships.
+          </p>
+
+          <h2>Personal Life</h2>
+
+          <p>
+            I have been married since 2017 to a wonderful husband. We have 4 chosen fur babies, Butters, Brad, Pete, and Este, who I guarantee will make an appearance at least once in your sessions! My husband and I practice ethical non-monogamy and have been involved in our local kink scene for more than 10 years. I believe sexuality is ever-evolving for most people, myself included. In my free time, I love making funny vinyl t-shirts and stickers, cuddling with my kitties, listening to true crime podcasts, and watching trashy reality tv and true crime documentaries.
+          </p>
+
+          <p>
+            Unlike "traditional" or more old school therapy, I think my self disclosure sometimes encourages and provides support to my clients. I will not share enough that you think we are besties, but I think self-disclosure does have a place in therapy if it helps my clients. And since I have the desire to help my own community, self disclosure is mandatory. Because of this unique relationship, I know there are chances to see each other in the "real world", and I hope you know I would never out you by saying hello in the community without you first saying hello to protect your privacy.
+          </p>
+
+        </div>
+      </div>
+
+      <div class="buttons" style="justify-content: center; margin-top: 32px;">
+        <a href="contact.html" class="btn btn-primary">Contact Kylie</a>
+        <a href="services.html" class="btn btn-secondary">View Services</a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
