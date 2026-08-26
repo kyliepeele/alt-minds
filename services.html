@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | Kylie Peele, LCSW</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Cormorant+Garamond:wght@400;500;600;700&family=Smooch&family=Oregano:ital@0;1&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --coral: #ef6a6c;
+      --pink: #e986c1;
+      --navy: #3D3A8C;
+      --teal: #40C9B5;
+      --text: #4d3842;
+      --soft-text: #7f6570;
+      --shadow: 0 18px 40px rgba(166, 111, 130, 0.14);
+      --shadow-soft: 0 10px 24px rgba(166, 111, 130, 0.12);
+      --border-soft: rgba(255, 255, 255, 0.45);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top, rgba(255,255,255,0.55), transparent 45%),
+        linear-gradient(180deg, #edd9df 0%, #f4e7eb 100%);
+      overflow-x: hidden;
+    }
+
+    .page {
+      max-width: 1460px;
+      margin: 0 auto;
+      min-height: 100vh;
+      position: relative;
+      background: linear-gradient(180deg, rgba(255,255,255,0.38), rgba(255,255,255,0.2));
+      overflow: hidden;
+    }
+
+    .bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .blob-left {
+      position: absolute;
+      left: -130px;
+      top: 155px;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, rgba(255,255,255,0.55), rgba(248, 193, 210, 0.72) 60%, rgba(238, 182, 200, 0.88));
+      opacity: 0.9;
+    }
+
+    .wave-1, .wave-2, .wave-3, .wave-4 {
+      position: absolute;
+      left: -10%;
+      width: 125%;
+      border-radius: 50%;
+      background: linear-gradient(90deg, rgba(247, 210, 222, 0.5), rgba(244, 205, 219, 0.25), rgba(247, 210, 222, 0.55));
+    }
+
+    .wave-1 { top: 220px; height: 170px; transform: rotate(-5deg); opacity: 0.7; }
+    .wave-2 { top: 455px; height: 170px; transform: rotate(-8deg); opacity: 0.75; }
+    .wave-3 { top: 690px; height: 150px; transform: rotate(-8deg); opacity: 0.45; }
+    .wave-4 { top: 790px; height: 160px; transform: rotate(-10deg); opacity: 0.6; }
+
+    .right-curve-top, .right-curve-bottom {
+      position: absolute;
+      right: -120px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 50% 50%, rgba(252, 219, 229, 0.55), rgba(247, 204, 219, 0.78));
+    }
+
+    .right-curve-top { top: -30px; width: 430px; height: 220px; opacity: 0.82; }
+    .right-curve-bottom { right: -80px; bottom: 40px; width: 360px; height: 170px; opacity: 0.42; }
+
+    .sparkle {
+      position: absolute;
+      z-index: 1;
+    }
+
+    .sparkle img {
+      width: 64px;
+      height: auto;
+      display: block;
+    }
+
+    .sparkle.small img { width: 38px; opacity: 0.72; }
+
+    .s1 { left: 70px; top: 140px; }
+    .s2 { right: 80px; top: 120px; }
+    .s3 { left: 100px; bottom: 90px; }
+
+    header {
+      position: relative;
+      z-index: 5;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 26px 56px 0;
+    }
+
+    .brand {
+      font-family: "Smooch", serif;
+      font-size: 3.1rem;
+      line-height: 1;
+      color: var(--navy);
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      gap: 42px;
+      font-size: 1.15rem;
+    }
+
+    nav a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    main {
+      position: relative;
+      z-index: 4;
+      padding: 34px 72px 70px;
+    }
+
+    h1 {
+      margin: 10px 0 28px;
+      text-align: center;
+      font-family: "Oregano", serif;
+      font-size: clamp(3.5rem, 7vw, 5.4rem);
+      line-height: 0.98;
+      color: var(--pink);
+    }
+
+    .intro {
+      max-width: 760px;
+      margin: 0 auto 36px;
+      text-align: center;
+      font-size: 1.25rem;
+      line-height: 1.55;
+    }
+
+    .grid {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .card-full {
+      grid-column: 1 / -1;
+      max-width: 50%;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .card {
+      background: rgba(255, 249, 250, 0.75);
+      border: 1px solid var(--border-soft);
+      border-radius: 34px;
+      box-shadow: var(--shadow);
+      padding: 30px;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-family: "Oregano", serif;
+      font-size: 2rem;
+      color: var(--navy);
+    }
+
+    p {
+      margin: 0;
+      font-size: 1.18rem;
+      line-height: 1.5;
+      color: var(--text);
+    }
+
+    .bottom-actions {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 36px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 1.05rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255,255,255,0.5);
+    }
+
+    .btn-primary {
+      background: linear-gradient(180deg, #4dd9c4, #35b8a3);
+      color: white;
+    }
+
+    .btn-secondary {
+      background: rgba(255, 245, 247, 0.82);
+      color: var(--text);
+    }
+
+    @media (max-width: 900px) {
+      header {
+        padding: 24px 28px 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+      }
+
+      main {
+        padding: 20px 28px 54px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .brand {
+        font-size: 2.2rem;
+      }
+
+      nav {
+        gap: 18px;
+        flex-wrap: wrap;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="bg">
+      <div class="blob-left"></div>
+      <div class="wave-1"></div>
+      <div class="wave-2"></div>
+      <div class="wave-3"></div>
+      <div class="wave-4"></div>
+      <div class="right-curve-top"></div>
+      <div class="right-curve-bottom"></div>
+      <div class="sparkle s1"><img src="sparkle.png" alt=""></div>
+      <div class="sparkle small s2"><img src="sparkle.png" alt=""></div>
+      <div class="sparkle s3"><img src="sparkle.png" alt=""></div>
+    </div>
+
+    <header>
+      <a class="brand" href="index.html">Alternative Minds Therapy</a>
+
+      <nav>
+  <a href="about.html">About</a>
+  <a href="specialties.html">Specialties</a>
+  <a href="services.html">Services</a>
+  <a href="art.html">A.R.T.</a>
+  <a href="contact.html">Contact</a>
+</nav>
+    </header>
+
+    <main>
+      <h1>Services</h1>
+
+      <div class="intro">
+        Affirming, compassionate support for identity, relationships, sexuality,
+        and healing.
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h2>Individual Therapy</h2>
+          <p>
+            Support for identity exploration, anxiety, self-trust, emotional regulation,
+            and personal growth in a nonjudgmental space.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>Sex Therapy</h2>
+          <p>
+            Compassionate care around intimacy, desire, shame, sexual wellbeing,
+            and relational concerns.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>Relationship Support</h2>
+          <p>
+            Affirming care for nontraditional relationships, communication challenges,
+            connection, boundaries, and repair.
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>LCSWA Supervision</h2>
+          <p>
+            Reflective, encouraging supervision for developing clinicians seeking
+            thoughtful and affirming professional support.
+          </p>
+        </div>
+
+        <a href="art.html" class="card card-full" style="text-decoration: none; color: inherit; display: block; cursor: pointer; transition: box-shadow 0.2s;">
+          <h2>Accelerated Resolution Therapy / A.R.T.</h2>
+          <p>
+            Accelerated Resolution Therapy is a brief, evidence-based approach that uses guided eye movements and image replacement techniques to rapidly reduce the distress associated with trauma, anxiety, depression, and phobias.
+          </p>
+        </a>
+      </div>
+
+      <div class="bottom-actions">
+        <a href="mailto:kyliepeelelcsw@gmail.com" class="btn btn-primary">Book a Session</a>
+        <a href="about.html" class="btn btn-secondary">Learn More About Kylie</a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
